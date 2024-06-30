@@ -11,12 +11,14 @@ interface PluginItem {
 }
 const PluginList: PluginItem[] = [
   {
-    manifest: 'https://openai-collections.chat-plugin.lobehub.com/txyz/manifest.json',
+    manifest:
+      'https://raw.githubusercontent.com/aipmhub/chat-plugin-reseach-paper/main/public/manifest.json',
     path: 'ResearchAI',
     tags: ['research paper', 'search'],
   },
   {
-    manifest: 'https://chat-plugin-apistore.theforage.cn/serper/manifest.json',
+    manifest:
+      'https://raw.githubusercontent.com/aipmhub/chat-plugin-serper/main/public/manifest.json',
     path: 'serper',
     tags: ['web', 'search'],
   },

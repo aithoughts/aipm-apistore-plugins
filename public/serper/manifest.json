@@ -7,6 +7,7 @@
   "auth": {
     "type": "none"
   },
+  "author": "5LOI",
   "contact_email": "nextprofessionalpower@gmail.com",
   "description_for_human": "Google search engine via Serper.dev",
   "description_for_model": "Plugin for performing web searches using the Serper.dev API to access Google search results.",

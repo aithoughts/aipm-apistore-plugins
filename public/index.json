@@ -2,7 +2,7 @@
   "expires": [],
   "plugins": [
     {
-      "author": "Forage🌿AI",
+      "author": "Forager🌿AI",
       "homepage": "https://www.theforage.cn",
       "identifier": "ResearchAI",
       "manifest": "https://chat-plugin-apistore.theforage.cn/ResearchAI/manifest.json",
@@ -15,8 +15,8 @@
       "schemaVersion": 1
     },
     {
-      "author": "Forage🌿AI",
-      "homepage": "https://www.theforage.cn",
+      "author": "5LOI🐬",
+      "homepage": "https://www.5loi.com",
       "identifier": "serper",
       "manifest": "https://chat-plugin-apistore.theforage.cn/serper/manifest.json",
       "meta": {
