@@ -1,0 +1,18 @@
+{
+  "api": {
+    "type": "openapi",
+    "url": "https://chat-plugin-apistore.theforage.cn/ResearchAI/openapi.json",
+    "is_user_authenticated": false
+  },
+  "auth": {
+    "type": "none"
+  },
+  "contact_email": "nextprofessionalpower@gmail.com",
+  "description_for_human": "Search for research papers within a specific field to find answers.",
+  "description_for_model": "Search through all research papers and other scientific literature, answer any questions regarding the content of papers, and recommend papers that discuss topics similar to a specified paper. For search requests, ALWAYS utilize the find_papers_plugin endpoint. If you have a query about a specific paper on arXiv.org, ALWAYS first use the summarize_plugin to obtain a summary. Then if there is a specific query about the paper, ALWAYS address the query using the chat_plugin endpoint. For inquiries about papers that are similar to a given paper, ALWAYS employ the find_similar_papers_plugin endpoint.",
+  "legal_info_url": "https://www.txyz.ai/terms",
+  "logo_url": "https://chat-plugin-apistore.theforage.cn/ResearchAI/logo.webp",
+  "name_for_human": "Search Research Papers",
+  "name_for_model": "ResearchAI",
+  "schema_version": "v1"
+}

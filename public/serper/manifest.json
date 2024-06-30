@@ -8,7 +8,7 @@
     "type": "none"
   },
   "contact_email": "nextprofessionalpower@gmail.com",
-  "description_for_human": "Google search engine via Serper.dev free API (2500x🆓/month)",
+  "description_for_human": "Google search engine via Serper.dev",
   "description_for_model": "Plugin for performing web searches using the Serper.dev API to access Google search results.",
   "legal_info_url": "https://serper.dev/terms",
   "logo_url": "https://chat-plugin-apistore.theforage.cn/serper/logo.webp",

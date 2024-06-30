@@ -2,13 +2,26 @@
   "expires": [],
   "plugins": [
     {
-      "author": "5Loi",
-      "homepage": "https://www.5loi.com",
+      "author": "Forage🌿AI",
+      "homepage": "https://www.theforage.cn",
+      "identifier": "ResearchAI",
+      "manifest": "https://chat-plugin-apistore.theforage.cn/ResearchAI/manifest.json",
+      "meta": {
+        "avatar": "https://chat-plugin-apistore.theforage.cn/ResearchAI/logo.webp",
+        "description": "Search for research papers within a specific field to find answers.",
+        "tags": ["research paper", "search"],
+        "title": "Search Research Papers"
+      },
+      "schemaVersion": 1
+    },
+    {
+      "author": "Forage🌿AI",
+      "homepage": "https://www.theforage.cn",
       "identifier": "serper",
       "manifest": "https://chat-plugin-apistore.theforage.cn/serper/manifest.json",
       "meta": {
         "avatar": "https://chat-plugin-apistore.theforage.cn/serper/logo.webp",
-        "description": "Google search engine via Serper.dev free API (2500x🆓/month)",
+        "description": "Google search engine via Serper.dev",
         "tags": ["web", "search"],
         "title": "Search Google via Serper"
       },
