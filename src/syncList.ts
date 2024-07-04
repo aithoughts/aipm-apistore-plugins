@@ -42,7 +42,7 @@ const PluginList: PluginItem[] = [
   },
   {
     manifest:
-      'https://www.theforage.cn/aipmhub/chat-plugins/chat-plugin-ai-tools-recommend/manifest.json',
+      'https://www.theforage.cn/aipmhub/chat-plugins/chat-plugin-pm-tools-recommend/manifest.json',
     path: 'pm_tools_recommend',
     tags: ['tool', 'recommend'],
   },

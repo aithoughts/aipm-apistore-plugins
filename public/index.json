@@ -69,13 +69,13 @@
     {
       "author": "theforage",
       "homepage": "https://www.theforage.cn",
-      "identifier": "ai_tools_recommend",
+      "identifier": "pm_tools_recommend",
       "manifest": "https://chat-plugin-apistore.theforage.cn/pm_tools_recommend/manifest.json",
       "meta": {
         "avatar": "https://chat-plugin-apistore.theforage.cn/pm_tools_recommend/logo.webp",
-        "description": "Discover the perfect AI tools for your needs.",
+        "description": "Discover the perfect tools for your work of product management",
         "tags": ["tool", "recommend"],
-        "title": "Recommend AI Tools"
+        "title": "Recommend PM Tools"
       },
       "schemaVersion": 1
     }
