@@ -1,140 +1,137 @@
 {
   "components": {
     "schemas": {
-      "loadPdfResponse": {
-        "title": "loadPdfResponse",
-        "required": ["documentId"],
-        "type": "string",
-        "description": "The documentId of PDF file."
-      },
-      "searchPdfResponse": {
-        "title": "searchPdfResponse",
+      "searchAbstractsResponse": {
         "type": "object",
         "properties": {
-          "chunks": {
-            "title": "The array of related query results",
+          "abstracts": {
             "type": "array",
             "items": {
-              "type": "string"
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "abstract": {
+                  "type": "string",
+                  "description": "Summary of the context, methods, results, and conclusions of the paper."
+                },
+                "doi": {
+                  "type": "string",
+                  "description": "The DOI of the paper."
+                },
+                "landing_page_url": {
+                  "type": "string",
+                  "description": "Link to the paper on its open-access host."
+                },
+                "pdf_url": {
+                  "type": "string",
+                  "description": "Link to the paper PDF."
+                },
+                "publicationDate": {
+                  "type": "string",
+                  "description": "The date the paper was published in YYYY-MM-DD format."
+                },
+                "relevance": {
+                  "type": "number",
+                  "description": "The relevance of the paper to the search query. 1 is the most relevant."
+                },
+                "creators": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "description": "The name of the creator."
+                  }
+                },
+                "cited_by_count": {
+                  "type": "number",
+                  "description": "The number of citations of the article."
+                }
+              }
             },
-            "description": "The array of related query results"
-          },
-          "rules": {
-            "title": "The array of rules which recommend gpt to follow.",
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "The array of rules which recommend gpt to follow."
+            "description": "The list of relevant abstracts."
           }
         }
       },
-      "QueryAbstractResponse": {
-        "title": "QueryAbstractResponse",
+      "getFullTextResponse": {
         "type": "object",
         "properties": {
-          "items": {
-            "title": "The array of related query results",
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/QueryAbstractItem"
-            },
-            "description": "The array of related query results"
+          "full_text": {
+            "type": "string",
+            "description": "The full text of the paper."
           },
-          "rules": {
-            "title": "The array of rules which recommend gpt to follow.",
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "The array of rules which recommend gpt to follow."
-          }
-        }
-      },
-      "QueryAbstractItem": {
-        "type": "object",
-        "properties": {
-          "title": {
-            "title": "Related paper title",
-            "type": "string"
+          "pdf_url": {
+            "type": "string",
+            "description": "The PDF URL of the paper."
           },
-          "pdfUrl": {
-            "title": "Related paper pdfUrl for user downloading",
-            "type": "string"
+          "chunk": {
+            "type": "number",
+            "description": "The chunk of the paper."
           },
-          "abstract": {
-            "title": "Related paper abstract",
-            "type": "string"
-          },
-          "paperUrl": {
-            "title": "Related paper url",
-            "type": "string"
-          },
-          "citedCount": {
-            "title": "Related paper citation count",
-            "type": "number"
+          "total_chunk_num": {
+            "type": "number",
+            "description": "The total chunks of the paper."
           }
         }
       }
     }
   },
   "info": {
-    "title": "MixerBox Scholar",
-    "description": "The plugin provides access to academic documents, covers various disciplines, and saves time by summarizing content. Users can search with keywords, sort results, and ask questions for assistance.",
+    "title": "ResearchAI",
+    "description": "Allows the user to search facts and findings from scientific articles",
     "version": "v1"
   },
-  "openapi": "3.1.0",
+  "openapi": "3.0.1",
   "paths": {
-    "/api/gpt_plugins/chat_pdf/upload": {
-      "post": {
-        "summary": "Enable users to upload a PDF file by providing a publicly accessible PDF URL link.",
-        "description": "Users can upload PDF files by providing a publicly accessible URL link. Once the file is successfully loaded, the plugin will return a unique document ID that represents the uploaded file.",
-        "operationId": "uploadFile",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "required": ["url"],
-                "properties": {
-                  "url": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "The temporary URL of the PDF document to load.",
-                    "required": true
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/loadPdfResponse"
-                }
-              }
+    "/api/abstracts": {
+      "get": {
+        "operationId": "searchAbstracts",
+        "summary": "Get relevant paper abstracts by keywords search",
+        "parameters": [
+          {
+            "name": "keywords",
+            "in": "query",
+            "description": "Keywords of inquiry which should appear in article",
+            "required": true,
+            "schema": {
+              "type": "string"
             }
           },
-          "400": {
-            "description": "Error occur when loading user providing file, the reason might be pdf is too many pages or the file is too large.",
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "The sort order for results, defaults to cited_by_count. Valid values are cited_by_count or publication_date.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "The user query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "peer_reviewed_only",
+            "in": "query",
+            "description": "Whether to only return peer reviewed articles. Defaults to true, ChatGPT should cautiously suggest this value can be set to false",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "error": {
-                      "type": "string"
-                    },
-                    "message": {
-                      "type": "string",
-                      "title": "Error message."
-                    }
-                  }
+                  "$ref": "#/components/schemas/searchAbstractsResponse"
                 }
               }
             }
@@ -142,87 +139,37 @@
         }
       }
     },
-    "/api/gpt_plugins/chat_pdf/query": {
-      "post": {
-        "summary": "Enable users to issue commands and ask questions related to the PDF content.",
-        "description": "After users interact with the plugin, itprocesses the queries, searches for relevant information within the PDF, and provides answers or references to the corresponding sections.",
-        "operationId": "queryFile",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "required": ["documentId", "query"],
-                "properties": {
-                  "documentId": {
-                    "type": "string",
-                    "description": "The documentId of PDF file.",
-                    "required": true
-                  },
-                  "query": {
-                    "type": "string",
-                    "description": "The user query",
-                    "required": true
-                  }
-                }
-              }
+    "/api/fulltext": {
+      "get": {
+        "operationId": "getFullText",
+        "summary": "Get full text of a paper by URL for PDF",
+        "parameters": [
+          {
+            "name": "pdf_url",
+            "in": "query",
+            "description": "URL for PDF",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "chunk",
+            "in": "query",
+            "description": "chunk number to retrieve, defaults to 1",
+            "required": false,
+            "schema": {
+              "type": "number"
             }
           }
-        },
+        ],
         "responses": {
           "200": {
             "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/searchPdfResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/gpt_plugins/scholar/abstract": {
-      "post": {
-        "summary": "Retrieve abstracts of academic papers that are relevant to specific keywords or topics.",
-        "description": "List out all the relevant abstracts related to the specific keywords or topics entered by the users.",
-        "operationId": "searchAbstract",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "required": ["query", "sortedByDate"],
-                "properties": {
-                  "query": {
-                    "type": "string",
-                    "format": "string",
-                    "description": "The user query for the paper",
-                    "required": true
-                  },
-                  "sort": {
-                    "type": "string",
-                    "format": "string",
-                    "default": "cited_by_count",
-                    "enum": ["cited_by_count", "publication_date"],
-                    "description": "The sort order for results, defaults to cited_by_count. Valid values are cited_by_count or publication_date.",
-                    "required": false
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/QueryAbstractResponse"
+                  "$ref": "#/components/schemas/getFullTextResponse"
                 }
               }
             }
@@ -233,7 +180,7 @@
   },
   "servers": [
     {
-      "url": "https://scholar.mixerbox.com"
+      "url": "https://scholar-ai.net"
     }
   ]
 }
