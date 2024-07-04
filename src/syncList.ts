@@ -12,15 +12,21 @@ interface PluginItem {
 const PluginList: PluginItem[] = [
   {
     manifest:
-      'https://raw.githubusercontent.com/aipmhub/chat-plugin-reseach-paper/main/public/manifest.json',
-    path: 'ResearchAI',
-    tags: ['research paper', 'search'],
+      'https://www.theforage.cn/aipmhub/chat-plugins/chat-plugin-reseach-paper-search/manifest.json',
+    path: 'research_paper_search',
+    tags: ['research', 'search'],
   },
   {
     manifest:
-      'https://raw.githubusercontent.com/aipmhub/chat-plugin-serper/main/public/manifest.json',
-    path: 'serper',
+      'https://www.theforage.cn/aipmhub/chat-plugins/chat-plugin-serper-google-search/manifest.json',
+    path: 'serper_google_search',
     tags: ['web', 'search'],
+  },
+  {
+    manifest:
+      'https://www.theforage.cn/aipmhub/chat-plugins/chat-plugin-website-seo-analysis/manifest.json',
+    path: 'website_seo_analysis',
+    tags: ['seo', 'analysis'],
   },
 ];
 

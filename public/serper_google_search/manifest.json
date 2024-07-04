@@ -1,19 +1,19 @@
 {
   "api": {
     "type": "openapi",
-    "url": "https://chat-plugin-apistore.theforage.cn/serper/openapi.json",
+    "url": "https://chat-plugin-apistore.theforage.cn/serper_google_search/openapi.json",
     "is_user_authenticated": false
   },
   "auth": {
     "type": "none"
   },
-  "author": "5LOI",
+  "author": "Forager🌿AI",
   "contact_email": "nextprofessionalpower@gmail.com",
   "description_for_human": "Google search engine via Serper.dev",
   "description_for_model": "Plugin for performing web searches using the Serper.dev API to access Google search results.",
   "legal_info_url": "https://serper.dev/terms",
-  "logo_url": "https://chat-plugin-apistore.theforage.cn/serper/logo.webp",
+  "logo_url": "https://chat-plugin-apistore.theforage.cn/serper_google_search/logo.webp",
   "name_for_human": "Search Google via Serper",
-  "name_for_model": "serper",
+  "name_for_model": "serper_google_search",
   "schema_version": "v1"
 }

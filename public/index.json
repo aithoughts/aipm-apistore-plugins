@@ -2,28 +2,41 @@
   "expires": [],
   "plugins": [
     {
-      "author": "Forager🌿AI",
+      "author": "theforage",
       "homepage": "https://www.theforage.cn",
-      "identifier": "ResearchAI",
-      "manifest": "https://chat-plugin-apistore.theforage.cn/ResearchAI/manifest.json",
+      "identifier": "research_paper_search",
+      "manifest": "https://chat-plugin-apistore.theforage.cn/research_paper_search/manifest.json",
       "meta": {
-        "avatar": "https://chat-plugin-apistore.theforage.cn/ResearchAI/logo.webp",
+        "avatar": "https://chat-plugin-apistore.theforage.cn/research_paper_search/logo.webp",
         "description": "Search for research papers within a specific field to find answers.",
-        "tags": ["research paper", "search"],
+        "tags": ["research", "search"],
         "title": "Search Research Papers"
       },
       "schemaVersion": 1
     },
     {
-      "author": "5LOI🐬",
-      "homepage": "https://www.5loi.com",
-      "identifier": "serper",
-      "manifest": "https://chat-plugin-apistore.theforage.cn/serper/manifest.json",
+      "author": "theforage",
+      "homepage": "https://www.theforage.cn",
+      "identifier": "serper_google_search",
+      "manifest": "https://chat-plugin-apistore.theforage.cn/serper_google_search/manifest.json",
       "meta": {
-        "avatar": "https://chat-plugin-apistore.theforage.cn/serper/logo.webp",
+        "avatar": "https://chat-plugin-apistore.theforage.cn/serper_google_search/logo.webp",
         "description": "Google search engine via Serper.dev",
         "tags": ["web", "search"],
         "title": "Search Google via Serper"
+      },
+      "schemaVersion": 1
+    },
+    {
+      "author": "theforage",
+      "homepage": "https://www.theforage.cn",
+      "identifier": "website_seo_analysis",
+      "manifest": "https://chat-plugin-apistore.theforage.cn/website_seo_analysis/manifest.json",
+      "meta": {
+        "avatar": "https://chat-plugin-apistore.theforage.cn/website_seo_analysis/logo.webp",
+        "description": "Enter any URL and keyword and get an On-Page SEO analysis & insights!",
+        "tags": ["seo", "analysis"],
+        "title": "SEO Analysis"
       },
       "schemaVersion": 1
     }
