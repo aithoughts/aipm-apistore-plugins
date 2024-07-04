@@ -1,98 +1,86 @@
 {
   "components": {
     "schemas": {
-      "ChatPluginRequest": {
+      "fetchPaperResponse": {
+        "type": "object",
         "properties": {
-          "arxiv_id": {
-            "title": "Arxiv Id",
-            "type": "string"
-          },
-          "query": {
-            "title": "Query",
-            "type": "string"
+          "result": {
+            "type": "string",
+            "description": "The details of the latest paper on the topic"
           }
-        },
-        "required": ["arxiv_id", "query"],
-        "title": "ChatPluginRequest",
-        "type": "object"
+        }
       },
-      "SummarizePluginRequest": {
+      "errorResponse": {
+        "type": "object",
         "properties": {
-          "arxiv_id": {
-            "title": "Arxiv Id",
-            "type": "string"
+          "error": {
+            "type": "string",
+            "description": "An error message describing the issue"
           }
-        },
-        "required": ["arxiv_id"],
-        "title": "SummarizePluginRequest",
-        "type": "object"
+        }
       }
     }
   },
   "info": {
-    "title": "Txyz Plugin",
-    "version": "0.1.0",
-    "description": "A plugin help researchers read arxiv papers."
+    "title": "Next Paper",
+    "description": "Fetch the latest research papers on a specific topic from PubMed.",
+    "version": "v1"
   },
-  "openapi": "3.0.2",
+  "openapi": "3.0.1",
   "paths": {
-    "/chat_plugin/": {
-      "post": {
-        "description": "fastAPI POST /chat to send a new message to the chat. takes sessionId (String), and query(String) as input and returns a message(string)",
-        "operationId": "chat_plugin_chat_plugin__post",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChatPluginRequest"
+    "/paper": {
+      "get": {
+        "operationId": "fetchPaper",
+        "summary": "Fetch the latest paper on a specific topic",
+        "parameters": [
+          {
+            "name": "keyword",
+            "in": "query",
+            "description": "The topic to search for",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/fetchPaperResponse"
+                }
               }
             }
           },
-          "required": true
-        },
-        "responses": {
-          "200": {
+          "404": {
+            "description": "No Results Found",
             "content": {
               "application/json": {
-                "schema": {}
-              }
-            },
-            "description": "Successful Response"
-          }
-        },
-        "summary": "Chat Plugin"
-      }
-    },
-    "/summarize_plugin/": {
-      "post": {
-        "operationId": "summarize_plugin_summarize_plugin__post",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SummarizePluginRequest"
+                "schema": {
+                  "$ref": "#/components/schemas/errorResponse"
+                }
               }
             }
           },
-          "required": true
-        },
-        "responses": {
-          "200": {
+          "500": {
+            "description": "Request Error",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/errorResponse"
+                }
               }
-            },
-            "description": "Successful Response"
+            }
           }
-        },
-        "summary": "Summarize Plugin"
+        }
       }
     }
   },
   "servers": [
     {
-      "url": "https://api.txyz.ai"
+      "url": "https://nextpaperplugin--mengzhao1.repl.co"
     }
   ]
 }
