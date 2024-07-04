@@ -3,7 +3,7 @@
     "securitySchemes": {
       "apiAuth": {
         "type": "apiKey",
-        "name": "[X-API-KEY](https://serper.dev/api-key)",
+        "name": "X-API-KEY",
         "in": "header"
       }
     }
