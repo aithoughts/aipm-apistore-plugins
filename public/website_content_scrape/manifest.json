@@ -1,0 +1,19 @@
+{
+  "api": {
+    "type": "openapi",
+    "url": "https://chat-plugin-apistore.theforage.cn/website_content_scrape/openapi.json",
+    "is_user_authenticated": false
+  },
+  "auth": {
+    "type": "none"
+  },
+  "author": "Forager🌿AI",
+  "contact_email": "nextprofessionalpower@gmail.com",
+  "description_for_human": "Scrape content from webpages by providing a URL.",
+  "description_for_model": "Plugin for performing web content scraping from webpages by providing a URL.",
+  "legal_info_url": "https://www.theforage.cn/legal/terms",
+  "logo_url": "https://chat-plugin-apistore.theforage.cn/website_content_scrape/logo.webp",
+  "name_for_human": "Scrape Webpage Content",
+  "name_for_model": "website_content_scrape",
+  "schema_version": "v1"
+}

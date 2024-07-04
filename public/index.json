@@ -39,6 +39,19 @@
         "title": "SEO Analysis"
       },
       "schemaVersion": 1
+    },
+    {
+      "author": "theforage",
+      "homepage": "https://www.theforage.cn",
+      "identifier": "website_content_scrape",
+      "manifest": "https://chat-plugin-apistore.theforage.cn/website_content_scrape/manifest.json",
+      "meta": {
+        "avatar": "https://chat-plugin-apistore.theforage.cn/website_content_scrape/logo.webp",
+        "description": "Scrape content from webpages by providing a URL.",
+        "tags": ["web", "analysis"],
+        "title": "Scrape Webpage Content"
+      },
+      "schemaVersion": 1
     }
   ]
 }

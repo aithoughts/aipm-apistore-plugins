@@ -28,6 +28,12 @@ const PluginList: PluginItem[] = [
     path: 'website_seo_analysis',
     tags: ['seo', 'analysis'],
   },
+  {
+    manifest:
+      'https://www.theforage.cn/aipmhub/chat-plugins/chat-plugin-website-content-scrape/manifest.json',
+    path: 'website_content_scrape',
+    tags: ['web', 'analysis'],
+  },
 ];
 
 export default PluginList;
