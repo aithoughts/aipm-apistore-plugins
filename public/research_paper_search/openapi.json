@@ -1,7 +1,7 @@
 {
   "components": {
     "schemas": {
-      "ChatApiRequest": {
+      "ChatPluginRequest": {
         "properties": {
           "arxiv_id": {
             "title": "Arxiv Id",
@@ -20,67 +20,10 @@
           }
         },
         "required": ["arxiv_id", "query"],
-        "title": "ChatApiRequest",
+        "title": "ChatPluginRequest",
         "type": "object"
       },
-      "ChatHistory": {
-        "properties": {
-          "question": {
-            "title": "Question",
-            "type": "string"
-          },
-          "response": {
-            "title": "Response",
-            "type": "string"
-          }
-        },
-        "required": ["question", "response"],
-        "title": "ChatHistory",
-        "type": "object"
-      },
-      "FindPapersRequest": {
-        "properties": {
-          "query": {
-            "title": "Query",
-            "type": "string"
-          }
-        },
-        "required": ["query"],
-        "title": "FindPapersRequest",
-        "type": "object"
-      },
-      "FindSimiliarPapersApiRequest": {
-        "properties": {
-          "arxiv_id": {
-            "title": "Arxiv Id",
-            "type": "string"
-          },
-          "keywords": {
-            "items": {
-              "type": "string"
-            },
-            "title": "Keywords",
-            "type": "array"
-          }
-        },
-        "required": ["arxiv_id", "keywords"],
-        "title": "FindSimiliarPapersApiRequest",
-        "type": "object"
-      },
-      "HTTPValidationError": {
-        "properties": {
-          "detail": {
-            "items": {
-              "$ref": "#/components/schemas/ValidationError"
-            },
-            "title": "Detail",
-            "type": "array"
-          }
-        },
-        "title": "HTTPValidationError",
-        "type": "object"
-      },
-      "SummaryApiRequest": {
+      "SummarizePluginRequest": {
         "properties": {
           "arxiv_id": {
             "title": "Arxiv Id",
@@ -88,55 +31,27 @@
           }
         },
         "required": ["arxiv_id"],
-        "title": "SummaryApiRequest",
-        "type": "object"
-      },
-      "ValidationError": {
-        "properties": {
-          "loc": {
-            "items": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
-            },
-            "title": "Location",
-            "type": "array"
-          },
-          "msg": {
-            "title": "Message",
-            "type": "string"
-          },
-          "type": {
-            "title": "Error Type",
-            "type": "string"
-          }
-        },
-        "required": ["loc", "msg", "type"],
-        "title": "ValidationError",
+        "title": "SummarizePluginRequest",
         "type": "object"
       }
     }
   },
   "info": {
-    "title": "FastAPI",
-    "version": "0.1.0"
+    "title": "Txyz Plugin",
+    "version": "0.1.0",
+    "description": "A plugin help researchers read arxiv papers."
   },
   "openapi": "3.0.2",
   "paths": {
     "/chat_plugin/": {
       "post": {
-        "description": "fastAPI POST /Chat with txyz.ai.\n\nIt takes arxiv_id, query and chat_history as inputs, and generates responses from txyz.ai and a welcome message.",
+        "description": "fastAPI POST /chat to send a new message to the chat. takes sessionId (String), and query(String) as input and returns a message(string)",
         "operationId": "chat_plugin_chat_plugin__post",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ChatApiRequest"
+                "$ref": "#/components/schemas/ChatPluginRequest"
               }
             }
           },
@@ -165,89 +80,14 @@
         "summary": "Chat Plugin"
       }
     },
-    "/find_papers_plugin/": {
-      "post": {
-        "description": "fastAPI POST / Find papers with txyz.ai.\n\nIt takes a general user query for searching papers and returns a list of papers and a welcome message.",
-        "operationId": "find_papers_plugin_find_papers_plugin__post",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/FindPapersRequest"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {}
-              }
-            },
-            "description": "Successful Response"
-          },
-          "422": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            },
-            "description": "Validation Error"
-          }
-        },
-        "summary": "Find Papers Plugin"
-      }
-    },
-    "/find_similiar_papers_plugin/": {
-      "post": {
-        "description": "fastAPI POST / Find similiar papers with txyz.ai.\n\nIt takes arxiv_id, 5 keywords, and returns a list of similiar papers and a welcome message.",
-        "operationId": "find_similiar_papers_plugin_find_similiar_papers_plugin__post",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/FindSimiliarPapersApiRequest"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {}
-              }
-            },
-            "description": "Successful Response"
-          },
-          "422": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            },
-            "description": "Validation Error"
-          }
-        },
-        "summary": "Find Similiar Papers Plugin"
-      }
-    },
     "/summarize_plugin/": {
       "post": {
-        "description": "fastAPI POST / Summarizes paper.\n\nIt takes arxiv_id and returns a summary of this paper and a welcome message.",
         "operationId": "summarize_plugin_summarize_plugin__post",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SummaryApiRequest"
+                "$ref": "#/components/schemas/SummarizePluginRequest"
               }
             }
           },
@@ -279,7 +119,7 @@
   },
   "servers": [
     {
-      "url": "https://plugin.txyz.ai"
+      "url": "https://api.txyz.ai"
     }
   ]
 }
