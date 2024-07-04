@@ -47,7 +47,7 @@
       "manifest": "https://chat-plugin-apistore.theforage.cn/website_content_scrape/manifest.json",
       "meta": {
         "avatar": "https://chat-plugin-apistore.theforage.cn/website_content_scrape/logo.webp",
-        "description": "Enter any URL and keyword and get an On-Page SEO analysis & insights!",
+        "description": "Enter any URL and get content insights!",
         "tags": ["web", "analysis"],
         "title": "Scrape Webpage Content"
       },
