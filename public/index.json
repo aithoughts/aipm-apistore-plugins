@@ -49,7 +49,7 @@
         "avatar": "https://chat-plugin-apistore.theforage.cn/website_content_scrape/logo.webp",
         "description": "Enter any URL and get content insights!",
         "tags": ["web", "analysis"],
-        "title": "Scrape Webpage Content"
+        "title": "Webpage Content Analysis"
       },
       "schemaVersion": 1
     }
