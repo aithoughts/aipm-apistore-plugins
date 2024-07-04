@@ -7,13 +7,6 @@
             "title": "Arxiv Id",
             "type": "string"
           },
-          "chat_history": {
-            "items": {
-              "$ref": "#/components/schemas/ChatHistory"
-            },
-            "title": "Chat History",
-            "type": "array"
-          },
           "query": {
             "title": "Query",
             "type": "string"
@@ -65,16 +58,6 @@
               }
             },
             "description": "Successful Response"
-          },
-          "422": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            },
-            "description": "Validation Error"
           }
         },
         "summary": "Chat Plugin"
@@ -101,16 +84,6 @@
               }
             },
             "description": "Successful Response"
-          },
-          "422": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            },
-            "description": "Validation Error"
           }
         },
         "summary": "Summarize Plugin"
