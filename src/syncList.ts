@@ -34,6 +34,18 @@ const PluginList: PluginItem[] = [
     path: 'website_content_scrape',
     tags: ['web', 'analysis'],
   },
+  {
+    manifest:
+      'https://www.theforage.cn/aipmhub/chat-plugins/chat-plugin-ai-tools-recommend/manifest.json',
+    path: 'ai_tools_recommend',
+    tags: ['ai', 'recommend'],
+  },
+  {
+    manifest:
+      'https://www.theforage.cn/aipmhub/chat-plugins/chat-plugin-ai-tools-recommend/manifest.json',
+    path: 'pm_tools_recommend',
+    tags: ['tool', 'recommend'],
+  },
 ];
 
 export default PluginList;
