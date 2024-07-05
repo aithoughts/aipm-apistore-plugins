@@ -1,4 +1,13 @@
 {
+  "components": {
+    "securitySchemes": {
+      "apiAuth": {
+        "type": "apiKey",
+        "name": "X-RapidAPI-Key",
+        "in": "header"
+      }
+    }
+  },
   "info": {
     "title": "BizToc",
     "description": "Get the latest business news articles.",
