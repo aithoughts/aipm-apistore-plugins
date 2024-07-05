@@ -1,90 +1,86 @@
 {
   "components": {
     "schemas": {
-      "getImageResponse": {
+      "SearchResponse": {
+        "title": "SearchResponse",
+        "required": ["success", "message", "data"],
         "type": "object",
         "properties": {
-          "imageURL": {
-            "type": "string",
-            "description": "The URL of the NASA Picture of the Day."
+          "success": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "integer"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ToolData"
+            }
           }
         }
       },
-      "searchImagesResponse": {
+      "ToolData": {
+        "title": "ToolData",
+        "required": ["name", "url", "excerpt", "payment_model"],
         "type": "object",
-        "description": "The response containing the list of images from the NASA Image Library.",
         "properties": {
-          "title": {
-            "type": "string",
-            "description": "The title of the image."
+          "name": {
+            "type": "string"
           },
-          "description": {
-            "type": "string",
-            "description": "The description of the image."
+          "url": {
+            "type": "string"
           },
-          "location": {
-            "type": "string",
-            "description": "The location of the image."
+          "excerpt": {
+            "type": "string"
           },
-          "date_created": {
-            "type": "string",
-            "description": "The date when the image was created."
-          },
-          "image_url": {
-            "type": "string",
-            "description": "The URL of the image. It must be displayed as an image in Markdown format."
+          "payment_type": {
+            "$ref": "string"
           }
         }
       }
     }
   },
   "info": {
-    "title": "Astrodaily",
-    "description": "A plugin for getting the daily picture from NASA's APOD and searching the NASA Image and Video Library",
-    "version": "v1"
+    "title": "AI Tool Search API",
+    "description": "An API for searching AI tools based on query and payment model.",
+    "version": "1.0.0"
   },
-  "openapi": "3.0.1",
+  "openapi": "3.0.2",
   "paths": {
-    "/image": {
+    "/api/search": {
       "get": {
-        "operationId": "getImage",
-        "summary": "Get the NASA Picture of the Day",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/getImageResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/search": {
-      "get": {
-        "operationId": "searchImages",
-        "summary": "Get images from NASA based on a query",
+        "summary": "Search",
+        "description": "Accepts a search query and an optional payment model filter.",
+        "operationId": "search_get",
         "parameters": [
           {
             "name": "q",
             "in": "query",
-            "description": "The search query",
+            "description": "Search query",
             "required": true,
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "p",
+            "in": "query",
+            "description": "Payment model filter (optional)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["free", "paid", "open_source"]
             }
           }
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Successful Response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/searchImagesResponse"
+                  "$ref": "#/components/schemas/SearchResponse"
                 }
               }
             }
@@ -95,7 +91,7 @@
   },
   "servers": [
     {
-      "url": "https://api.360macky.com"
+      "url": "https://api.aishowcase.io"
     }
   ]
 }
