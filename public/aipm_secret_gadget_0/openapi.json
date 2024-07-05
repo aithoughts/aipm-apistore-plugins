@@ -50,11 +50,12 @@
   },
   "info": {
     "title": "Shop AI",
-    "description": "A plugin for searching products based on a search term and quantity and returning the most relevant top."
+    "description": "A plugin for searching products based on a search term and quantity and returning the most relevant top.",
+    "version": "v1"
   },
   "openapi": "3.0.1",
   "paths": {
-    "/search": {
+    "/api/search/": {
       "get": {
         "operationId": "searchProducts",
         "summary": "Search tops based on a search term and quantity.",
@@ -96,7 +97,7 @@
   },
   "servers": [
     {
-      "url": "https://byby.ai/api"
+      "url": "https://byby.ai"
     }
   ]
 }
