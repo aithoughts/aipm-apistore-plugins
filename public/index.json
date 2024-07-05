@@ -86,7 +86,7 @@
       "manifest": "https://chat-plugin-apistore.theforage.cn/aipm_secret_gadget_0/manifest.json",
       "meta": {
         "avatar": "https://chat-plugin-apistore.theforage.cn/aipm_secret_gadget_0/logo.webp",
-        "description": "Get Today's AI News Headlines",
+        "description": "Ask questions about general knowledge, current events, and breaking news, and get up-to-date answers from Wikipedia.",
         "tags": ["secret", "gadgets"],
         "title": "Secret Gadget"
       },
