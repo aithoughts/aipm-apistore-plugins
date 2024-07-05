@@ -1,0 +1,22 @@
+{
+  "api": {
+    "type": "openapi",
+    "url": "https://chat-plugin-apistore.theforage.cn/aipm_secret_gadget-0/openapi.json",
+    "is_user_authenticated": false
+  },
+  "auth": {
+    "type": "none",
+    "verification_tokens": {
+      "openai": "c6d85516a5f44e96a96321fa2fba91b9"
+    }
+  },
+  "author": "Forager🌿AI",
+  "contact_email": "nextprofessionalpower@gmail.com",
+  "description_for_human": "Generate charts. The user can request a chart to be generated.",
+  "description_for_model": "Generate charts. The user can request a chart to be generated.",
+  "legal_info_url": "https://www.theforage.cn/legal/terms",
+  "logo_url": "https://chat-plugin-apistore.theforage.cn/aipm_secret_gadget-0/logo.webp",
+  "name_for_human": "Secret Gadgets",
+  "name_for_model": "aipm_secret_gadget_0",
+  "schema_version": "v1"
+}

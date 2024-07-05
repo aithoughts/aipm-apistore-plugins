@@ -38,13 +38,19 @@ const PluginList: PluginItem[] = [
     manifest:
       'https://www.theforage.cn/aipmhub/chat-plugins/chat-plugin-ai-tools-recommend/manifest.json',
     path: 'ai_tools_recommend',
-    tags: ['ai', 'recommend'],
+    tags: ['ai', 'recommendation'],
   },
   {
     manifest:
       'https://www.theforage.cn/aipmhub/chat-plugins/chat-plugin-pm-tools-recommend/manifest.json',
     path: 'pm_tools_recommend',
-    tags: ['tool', 'recommend'],
+    tags: ['tool', 'recommendation'],
+  },
+  {
+    manifest:
+      'https://www.theforage.cn/aipmhub/chat-plugins/chat-plugin-aipm-secret-gadget-0/manifest.json',
+    path: 'aipm_secret_gadget-0',
+    tags: ['secret', 'gadgets'],
   },
 ];
 
