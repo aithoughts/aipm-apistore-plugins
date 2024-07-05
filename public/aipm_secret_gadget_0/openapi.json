@@ -37,9 +37,14 @@
       }
     }
   },
+  "security": [
+    {
+      "apiAuth": []
+    }
+  ],
   "servers": [
     {
-      "url": "https://biztoc.p.rapidapi.com"
+      "url": "rapidapi.com"
     }
   ]
 }
