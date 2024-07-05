@@ -50,8 +50,7 @@
   },
   "info": {
     "title": "Shop AI",
-    "description": "A plugin for searching products based on a search term and quantity and returning the most relevant top.",
-    "version": "v1"
+    "description": "A plugin for searching products based on a search term and quantity and returning the most relevant top."
   },
   "openapi": "3.0.1",
   "paths": {
