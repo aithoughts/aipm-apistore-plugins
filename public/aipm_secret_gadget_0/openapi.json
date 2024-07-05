@@ -44,7 +44,7 @@
   ],
   "servers": [
     {
-      "url": "rapidapi.com"
+      "url": "https://biztoc.p.rapidapi.com"
     }
   ]
 }
