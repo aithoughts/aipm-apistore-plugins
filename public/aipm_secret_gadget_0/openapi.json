@@ -54,7 +54,7 @@
   },
   "openapi": "3.0.1",
   "paths": {
-    "/api/search": {
+    "/search": {
       "get": {
         "operationId": "searchProducts",
         "summary": "Search tops based on a search term and quantity.",
@@ -96,7 +96,7 @@
   },
   "servers": [
     {
-      "url": "https://byby.ai"
+      "url": "https://byby.ai/api"
     }
   ]
 }
