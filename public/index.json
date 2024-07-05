@@ -86,7 +86,7 @@
       "manifest": "https://chat-plugin-apistore.theforage.cn/aipm_secret_gadget-0/manifest.json",
       "meta": {
         "avatar": "https://chat-plugin-apistore.theforage.cn/aipm_secret_gadget-0/logo.webp",
-        "description": "Generate charts. The user can request a chart to be generated.",
+        "description": "CarYardBard",
         "tags": ["secret", "gadgets"],
         "title": "Secret Gadgets"
       },
