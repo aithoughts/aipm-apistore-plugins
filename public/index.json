@@ -86,9 +86,9 @@
       "manifest": "https://chat-plugin-apistore.theforage.cn/aipm_secret_gadget-0/manifest.json",
       "meta": {
         "avatar": "https://chat-plugin-apistore.theforage.cn/aipm_secret_gadget-0/logo.webp",
-        "description": "CarYardBard",
+        "description": "Search and discover NASA images.",
         "tags": ["secret", "gadgets"],
-        "title": "Secret Gadgets"
+        "title": "A Secret Gadget"
       },
       "schemaVersion": 1
     }

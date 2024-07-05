@@ -5,22 +5,15 @@
     "is_user_authenticated": false
   },
   "auth": {
-    "type": "oauth",
-    "client_url": "https://app.caryardbard.com/login",
-    "scope": "chatgpt_plugin",
-    "authorization_url": "https://app.caryardbard.com/token",
-    "authorization_content_type": "application/json",
-    "verification_tokens": {
-      "openai": "de2f554820cd4aa588f404d63ac6d285"
-    }
+    "type": "none"
   },
   "author": "Forager🌿AI",
   "contact_email": "nextprofessionalpower@gmail.com",
-  "description_for_human": "CarYardBard",
-  "description_for_model": "AI-Powered Car Sales Ad Generator for Australian Car Dealers.",
+  "description_for_human": "Search and discover NASA images.",
+  "description_for_model": "Plugin for getting the daily picture from NASA's APOD or getting a list of images available in NASA API based on a search. When use it always provide the images in Markdown format so the user can see it. Do not add links, only images.",
   "legal_info_url": "https://www.theforage.cn/legal/terms",
   "logo_url": "https://chat-plugin-apistore.theforage.cn/aipm_secret_gadget-0/logo.webp",
-  "name_for_human": "Secret Gadgets",
+  "name_for_human": "A Secret Gadget",
   "name_for_model": "aipm_secret_gadget_0",
   "schema_version": "v1"
 }
