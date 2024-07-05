@@ -1,89 +1,28 @@
 {
-  "components": {
-    "schemas": {
-      "SearchResponse": {
-        "title": "SearchResponse",
-        "required": ["success", "message", "data"],
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "message": {
-            "type": "integer"
-          },
-          "data": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ToolData"
-            }
-          }
-        }
-      },
-      "ToolData": {
-        "title": "ToolData",
-        "required": ["name", "url", "excerpt", "payment_model"],
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "url": {
-            "type": "string"
-          },
-          "excerpt": {
-            "type": "string"
-          },
-          "payment_type": {
-            "$ref": "string"
-          }
-        }
-      }
-    }
-  },
   "info": {
-    "title": "AI Tool Search API",
-    "description": "An API for searching AI tools based on query and payment model.",
-    "version": "1.0.0"
+    "title": "BizToc",
+    "description": "Get the latest business news articles.",
+    "version": "v1"
   },
-  "openapi": "3.0.2",
+  "openapi": "3.0.1",
   "paths": {
-    "/api/search": {
+    "/ai/news": {
       "get": {
-        "summary": "Search",
-        "description": "Accepts a search query and an optional payment model filter.",
-        "operationId": "search_get",
+        "operationId": "getNews",
+        "summary": "Retrieves the latest news whose content contains the query string.",
         "parameters": [
           {
-            "name": "q",
             "in": "query",
-            "description": "Search query",
-            "required": true,
+            "name": "query",
             "schema": {
               "type": "string"
-            }
-          },
-          {
-            "name": "p",
-            "in": "query",
-            "description": "Payment model filter (optional)",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "enum": ["free", "paid", "open_source"]
-            }
+            },
+            "description": "Used to query news articles on their title and body. For example, ?query=apple will return news stories that have 'apple' in their title or body."
           }
         ],
         "responses": {
           "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SearchResponse"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
@@ -91,7 +30,7 @@
   },
   "servers": [
     {
-      "url": "https://api.aishowcase.io"
+      "url": "https://ai.biztoc.com"
     }
   ]
 }
