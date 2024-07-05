@@ -83,9 +83,9 @@
       "author": "theforage",
       "homepage": "https://www.theforage.cn",
       "identifier": "aipm_secret_gadget_0",
-      "manifest": "https://chat-plugin-apistore.theforage.cn/aipm_secret_gadget-0/manifest.json",
+      "manifest": "https://chat-plugin-apistore.theforage.cn/aipm_secret_gadget_0/manifest.json",
       "meta": {
-        "avatar": "https://chat-plugin-apistore.theforage.cn/aipm_secret_gadget-0/logo.webp",
+        "avatar": "https://chat-plugin-apistore.theforage.cn/aipm_secret_gadget_0/logo.webp",
         "description": "Discover the perfect AI tool for your personal and business needs with AI Showcase.",
         "tags": ["secret", "gadgets"],
         "title": "Secret Gadget"

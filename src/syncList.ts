@@ -49,7 +49,7 @@ const PluginList: PluginItem[] = [
   {
     manifest:
       'https://www.theforage.cn/aipmhub/chat-plugins/chat-plugin-aipm-secret-gadget-0/manifest.json',
-    path: 'aipm_secret_gadget-0',
+    path: 'aipm_secret_gadget_0',
     tags: ['secret', 'gadgets'],
   },
 ];
