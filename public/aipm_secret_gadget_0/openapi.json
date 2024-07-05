@@ -31,7 +31,27 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "body": {
+                        "type": "string",
+                        "description": "summary of news"
+                      },
+                      "domain": {
+                        "type": "string",
+                        "description": "link of news"
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
