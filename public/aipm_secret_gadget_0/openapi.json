@@ -15,14 +15,14 @@
   },
   "openapi": "3.0.1",
   "paths": {
-    "/ai/news": {
+    "/search": {
       "get": {
         "operationId": "getNews",
         "summary": "Retrieves the latest news whose content contains the query string.",
         "parameters": [
           {
             "in": "query",
-            "name": "query",
+            "name": "q",
             "schema": {
               "type": "string"
             },
@@ -39,7 +39,7 @@
   },
   "servers": [
     {
-      "url": "https://ai.biztoc.com"
+      "url": "https://biztoc.p.rapidapi.com"
     }
   ]
 }
