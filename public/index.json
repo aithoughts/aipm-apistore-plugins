@@ -86,7 +86,7 @@
       "manifest": "https://chat-plugin-apistore.theforage.cn/aipm_secret_gadget_0/manifest.json",
       "meta": {
         "avatar": "https://chat-plugin-apistore.theforage.cn/aipm_secret_gadget_0/logo.webp",
-        "description": "Discover, read, reference, and search through all arXiv papers.",
+        "description": "Get Today's AI News Headlines",
         "tags": ["secret", "gadgets"],
         "title": "Secret Gadget"
       },
