@@ -1,103 +1,84 @@
 {
-  "components": {
-    "schemas": {
-      "searchProductsResponse": {
-        "description": "The response containing the top and its products.",
-        "type": "object",
+  "$schema": "../node_modules/@aimporg/chat-plugin-sdk/schema.json",
+  "api": [
+    {
+      "url": "https://bilibili.chat-plugin.lobehub.com/api/search",
+      "name": "searchVideo",
+      "description": "Search videos by keywords",
+      "parameters": {
         "properties": {
-          "topTitle": {
-            "type": "string",
-            "description": "The title of the top."
-          },
-          "products": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Product"
-            }
+          "keywords": {
+            "description": "video keywords",
+            "type": "string"
           }
-        }
-      },
-      "Product": {
-        "type": "object",
+        },
+        "required": ["keywords"],
+        "type": "object"
+      }
+    },
+    {
+      "url": "https://bilibili.chat-plugin.lobehub.com/api/replay",
+      "name": "videoReplay",
+      "description": "get video replay by video avid",
+      "parameters": {
         "properties": {
-          "title": {
-            "type": "string",
-            "description": "The title of the product."
-          },
-          "description": {
-            "type": "string",
-            "description": "The description of the product."
-          },
-          "link": {
-            "type": "string",
-            "description": "The URL link of the product."
-          },
-          "salesPrice": {
-            "type": "string",
-            "description": "The sales price of the product."
-          },
-          "imageUrl": {
-            "type": "string",
-            "description": "The URL link to the image of the product."
-          },
-          "numberStars": {
-            "type": "integer",
-            "description": "The rating of the product."
+          "avid": {
+            "description": "video avid ( Starting with 'av' or 'BV'), e.g. av662384801 or BV1TP411b7pN",
+            "type": "string"
           }
-        }
+        },
+        "required": ["avid"],
+        "type": "object"
+      }
+    },
+    {
+      "url": "https://bilibili.chat-plugin.lobehub.com/api/danmaku",
+      "name": "videoDanmaku",
+      "description": "get video danmaku by video avid",
+      "parameters": {
+        "properties": {
+          "avid": {
+            "description": "video avid ( Starting with 'av' or 'BV'), e.g. av662384801 or BV1TP411b7pN",
+            "type": "string"
+          }
+        },
+        "required": ["avid"],
+        "type": "object"
+      }
+    },
+    {
+      "url": "https://bilibili.chat-plugin.lobehub.com/api/popular",
+      "name": "popularVideo",
+      "description": "get global popular videos from bilibili with no keywords",
+      "parameters": {
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "url": "https://bilibili.chat-plugin.lobehub.com/api/hot-search",
+      "name": "hotSearch",
+      "description": "get hot-search keywords from bilibili, return top 10 keywords",
+      "parameters": {
+        "properties": {},
+        "type": "object"
       }
     }
-  },
-  "info": {
-    "title": "Shop AI",
-    "description": "A plugin for searching products based on a search term and quantity and returning the most relevant top.",
-    "version": "v1"
-  },
-  "openapi": "3.0.1",
-  "paths": {
-    "/api/search/": {
-      "get": {
-        "operationId": "searchProducts",
-        "summary": "Search tops based on a search term and quantity.",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "searchTerm",
-            "schema": {
-              "type": "string"
-            },
-            "required": true,
-            "description": "The search term to look for in top's overview."
-          },
-          {
-            "in": "query",
-            "name": "quantity",
-            "schema": {
-              "type": "integer",
-              "default": 5
-            },
-            "required": false,
-            "description": "The quantity of products to retrieve from the top."
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/searchProductsResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    }
+  ],
+  "author": "LobeHub",
+  "createdAt": "2024-01-27",
+  "homepage": "https://github.com/lobehub/chat-plugin-bilibili",
+  "identifier": "bilibili",
+  "meta": {
+    "avatar": "https://bilibili.chat-plugin.lobehub.com/logo.webp",
+    "tags": ["video", "bilibili", "search"],
+    "title": "Bilibili",
+    "description": "Dive into Bilibili's vast content with features like keyword video search, replay access, interactive danmaku, trending video recommendations, and hot-search insights, all at your fingertips."
   },
   "servers": [
     {
-      "url": "https://byby.ai"
+      "url": "https://www.theforage.cn"
     }
-  ]
+  ],
+  "version": "1"
 }
