@@ -1,0 +1,19 @@
+{
+  "api": {
+    "type": "openapi",
+    "url": "https://chat-plugin-apistore.theforage.cn/oss_stat_gadget/openapi.json",
+    "is_user_authenticated": false
+  },
+  "auth": {
+    "type": "none"
+  },
+  "author": "Forager🌿AI",
+  "contact_email": "nextprofessionalpower@gmail.com",
+  "description_for_human": "Retrieve detailed statistics and information about open-source repositories and developers. Analyze repository data, user contributions, community growth, and historical trends",
+  "description_for_model": "Get on-demand stats and historical analysis for OSS repositories and developers",
+  "legal_info_url": "https://www.theforage.cn/legal/terms",
+  "logo_url": "https://chat-plugin-apistore.theforage.cn/oss_stat_gadget/logo.webp",
+  "name_for_human": "GitHub Gadget",
+  "name_for_model": "oss_stat_gadget",
+  "schema_version": "v1"
+}

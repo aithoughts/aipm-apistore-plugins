@@ -82,6 +82,19 @@
     {
       "author": "theforage",
       "homepage": "https://www.theforage.cn",
+      "identifier": "oss_stat_gadget",
+      "manifest": "https://chat-plugin-apistore.theforage.cn/oss_stat_gadget/manifest.json",
+      "meta": {
+        "avatar": "https://chat-plugin-apistore.theforage.cn/oss_stat_gadget/logo.webp",
+        "description": "Retrieve detailed statistics and information about open-source repositories and developers. Analyze repository data, user contributions, community growth, and historical trends",
+        "tags": ["oss", "gadgets"],
+        "title": "GitHub Gadget"
+      },
+      "schemaVersion": 1
+    },
+    {
+      "author": "theforage",
+      "homepage": "https://www.theforage.cn",
       "identifier": "aipm_secret_gadget_0",
       "manifest": "https://chat-plugin-apistore.theforage.cn/aipm_secret_gadget_0/manifest.json",
       "meta": {

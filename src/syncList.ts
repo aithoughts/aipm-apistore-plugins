@@ -48,6 +48,12 @@ const PluginList: PluginItem[] = [
   },
   {
     manifest:
+      'https://www.theforage.cn/aipmhub/chat-plugins/chat-plugin-oss-stat-gadget/manifest.json',
+    path: 'oss_stat_gadget',
+    tags: ['oss', 'gadgets'],
+  },
+  {
+    manifest:
       'https://www.theforage.cn/aipmhub/chat-plugins/chat-plugin-aipm-secret-gadget-0/manifest.json',
     path: 'aipm_secret_gadget_0',
     tags: ['secret', 'gadgets'],
