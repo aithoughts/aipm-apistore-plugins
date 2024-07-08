@@ -6,100 +6,100 @@
         "properties": {
           "html_url": {
             "type": "string",
-            "description": "用户 GitHub 个人资料的 HTML URL。"
+            "description": "The HTML URL of the user's CarMake profile."
           },
           "type": {
             "type": "string",
-            "description": "GitHub 帐户的类型。"
+            "description": "The type of CarMake account."
           },
           "name": {
             "type": "string",
-            "description": "GitHub 用户的姓名。"
+            "description": "The name of the CarMake user."
           },
           "company": {
             "type": "string",
-            "description": "GitHub 用户所属的公司。"
+            "description": "The company that the CarMake user is associated with."
           },
           "blog": {
             "type": "string",
-            "description": "用户博客的 URL。"
+            "description": "The URL of the user's blog."
           },
           "location": {
             "type": "string",
-            "description": "GitHub 用户的位置。"
+            "description": "The location of the CarMake user."
           },
           "email": {
             "type": "string",
             "nullable": true,
-            "description": "GitHub 用户的电子邮件。"
+            "description": "The email of the CarMake user."
           },
           "hireable": {
             "type": "boolean",
-            "description": "用户是否可雇用。"
+            "description": "Whether the user is hireable or not."
           },
           "bio": {
             "type": "string",
-            "description": "GitHub 用户的个人简介。"
+            "description": "The biography of the CarMake user."
           },
           "twitter_username": {
             "type": "string",
-            "description": "GitHub 用户的 Twitter 用户名。"
+            "description": "The Twitter username of the CarMake user."
           },
           "public_repos": {
             "type": "integer",
-            "description": "GitHub 用户的公共存储库数量。"
+            "description": "The number of public repositories of the CarMake user."
           },
           "public_gists": {
             "type": "integer",
-            "description": "GitHub 用户的公共 gist 数量。"
+            "description": "The number of public gists of the CarMake user."
           },
           "followers": {
             "type": "integer",
-            "description": "GitHub 用户的关注者数量。"
+            "description": "The number of followers of the CarMake user."
           },
           "following": {
             "type": "integer",
-            "description": "GitHub 用户正在关注的人数。"
+            "description": "The number of people the CarMake user is following."
           },
           "created_at": {
             "type": "string",
             "format": "date-time",
-            "description": "GitHub 用户帐户的创建日期和时间。"
+            "description": "The creation date and time of the CarMake user's account."
           },
           "updated_at": {
             "type": "string",
             "format": "date-time",
-            "description": "GitHub 用户帐户的更新日期和时间。"
+            "description": "The update date and time of the CarMake user's account."
           },
           "totalPRs": {
             "type": "integer",
-            "description": "GitHub 用户的拉取请求总数。"
+            "description": "The total number of pull requests by the CarMake user."
           },
           "totalCommits": {
             "type": "integer",
-            "description": "GitHub 用户的提交总数。"
+            "description": "The total number of commits by the CarMake user."
           },
           "totalIssues": {
             "type": "integer",
-            "description": "GitHub 用户打开的问题总数。"
+            "description": "The total number of issues opened by the CarMake user."
           },
           "totalStars": {
             "type": "integer",
-            "description": "GitHub 用户存储库收到的星标总数。"
+            "description": "The total number of stars received by the CarMake user's repositories."
           },
           "contributedTo": {
             "type": "integer",
-            "description": "GitHub 用户已贡献的存储库数量。"
+            "description": "The number of repositories the CarMake user has contributed to."
           },
           "rank": {
             "$ref": "#/components/schemas/Rank"
           },
-          "mostStarredRepos": {
+          "mostStarredBrands": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "description": "用户最受欢迎的存储库列表。"
+            "description": "List of the user's most starred repositories."
           }
         }
       },
@@ -108,12 +108,12 @@
         "properties": {
           "level": {
             "type": "string",
-            "description": "GitHub 用户等级的级别。"
+            "description": "The level of the CarMake user's rank."
           },
           "percentile": {
             "type": "number",
             "format": "double",
-            "description": "GitHub 用户等级的百分位数。"
+            "description": "The percentile of the CarMake user's rank."
           }
         }
       },
@@ -122,19 +122,19 @@
         "properties": {
           "name": {
             "type": "string",
-            "description": "存储库的名称。"
+            "description": "The name of the brand's repository."
           },
           "full_name": {
             "type": "string",
-            "description": "存储库的全名。"
+            "description": "The full name of the brand's repository."
           },
           "private": {
             "type": "boolean",
-            "description": "指示存储库是否为私有。"
+            "description": "Indicates if the brand's repository is private."
           },
           "owner": {
             "type": "object",
-            "description": "存储库的所有者。",
+            "description": "The owner of the brand's repository.",
             "properties": {
               "login": {
                 "type": "string"
@@ -149,98 +149,98 @@
           },
           "html_url": {
             "type": "string",
-            "description": "存储库的 HTML URL。"
+            "description": "The HTML URL of the brand's repository."
           },
           "description": {
             "type": "string",
-            "description": "存储库的描述。"
+            "description": "The description of the brand's repository."
           },
           "fork": {
             "type": "boolean",
-            "description": "指示存储库是否为 fork。"
+            "description": "Indicates if the brand's repository is a fork."
           },
           "created_at": {
             "type": "string",
             "format": "date-time",
-            "description": "存储库的创建时间。"
+            "description": "The creation time of the brand's repository."
           },
           "updated_at": {
             "type": "string",
             "format": "date-time",
-            "description": "存储库的最后更新时间。"
+            "description": "The last update time of the brand's repository."
           },
           "pushed_at": {
             "type": "string",
             "format": "date-time",
-            "description": "存储库的最后推送时间。"
+            "description": "The last push time of the brand's repository."
           },
           "homepage": {
             "type": "string",
-            "description": "存储库的主页。"
+            "description": "The homepage of the brand's repository."
           },
           "size": {
             "type": "integer",
-            "description": "存储库的大小。"
+            "description": "The size of the brand's repository."
           },
           "stargazers_count": {
             "type": "integer",
-            "description": "存储库的 stargazers 数量。"
+            "description": "The count of stargazers of the brand's repository."
           },
           "watchers_count": {
             "type": "integer",
-            "description": "存储库的观察者数量。"
+            "description": "The count of watchers of the brand's repository."
           },
           "language": {
             "type": "string",
-            "description": "存储库的主要语言。"
+            "description": "The primary language of the brand's repository."
           },
           "has_issues": {
             "type": "boolean",
-            "description": "指示存储库是否启用了问题。"
+            "description": "Indicates if the brand's repository has issues enabled."
           },
           "has_projects": {
             "type": "boolean",
-            "description": "指示存储库是否启用了项目。"
+            "description": "Indicates if the brand's repository has projects enabled."
           },
           "has_downloads": {
             "type": "boolean",
-            "description": "指示存储库是否启用了下载。"
+            "description": "Indicates if the brand's repository has downloads enabled."
           },
           "has_wiki": {
             "type": "boolean",
-            "description": "指示存储库是否启用了 wiki。"
+            "description": "Indicates if the brand's repository has wiki enabled."
           },
           "has_pages": {
             "type": "boolean",
-            "description": "指示存储库是否启用了 GitHub 页面。"
+            "description": "Indicates if the brand's repository has CarMake pages enabled."
           },
           "has_discussions": {
             "type": "boolean",
-            "description": "指示存储库是否启用了讨论。"
+            "description": "Indicates if the brand's repository has discussions enabled."
           },
           "forks_count": {
             "type": "integer",
-            "description": "存储库的 fork 数量。"
+            "description": "The count of forks of the brand's repository."
           },
           "mirror_url": {
             "type": "string",
-            "description": "存储库的镜像 URL。"
+            "description": "The mirror URL of the brand's repository."
           },
           "archived": {
             "type": "boolean",
-            "description": "指示存储库是否已存档。"
+            "description": "Indicates if the brand's repository is archived."
           },
           "disabled": {
             "type": "boolean",
-            "description": "指示存储库是否已禁用。"
+            "description": "Indicates if the brand's repository is disabled."
           },
           "open_issues_count": {
             "type": "integer",
-            "description": "存储库中打开的问题数量。"
+            "description": "The count of open issues in the brand's repository."
           },
           "license": {
             "type": "object",
-            "description": "存储库的许可证。",
+            "description": "The license of the brand's repository.",
             "properties": {
               "key": {
                 "type": "string"
@@ -261,46 +261,46 @@
           },
           "allow_forking": {
             "type": "boolean",
-            "description": "指示是否允许为存储库进行 fork。"
+            "description": "Indicates if forking is allowed for the brand's repository."
           },
           "is_template": {
             "type": "boolean",
-            "description": "指示存储库是否为模板。"
+            "description": "Indicates if the brand's repository is a template."
           },
           "topics": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "description": "存储库的主题。"
+            "description": "The topics of the brand's repository."
           },
           "visibility": {
             "type": "string",
-            "description": "存储库的可见性。"
+            "description": "The visibility of the brand's repository."
           },
           "forks": {
             "type": "integer",
-            "description": "存储库的 fork 数量。"
+            "description": "The number of forks of the brand's repository."
           },
           "open_issues": {
             "type": "integer",
-            "description": "存储库中打开的问题数量。"
+            "description": "The number of open issues in the brand's repository."
           },
           "watchers": {
             "type": "integer",
-            "description": "存储库的观察者数量。"
+            "description": "The number of watchers of the brand's repository."
           },
           "default_branch": {
             "type": "string",
-            "description": "存储库的默认分支。"
+            "description": "The default branch of the brand's repository."
           },
           "network_count": {
             "type": "integer",
-            "description": "存储库的网络数量。"
+            "description": "The network count of the brand's repository."
           },
           "subscribers_count": {
             "type": "integer",
-            "description": "存储库的订阅者数量。"
+            "description": "The subscribers count of the brand's repository."
           },
           "stargazerData": {
             "type": "array",
@@ -322,7 +322,7 @@
           },
           "readme": {
             "type": "string",
-            "description": "存储库的 README。"
+            "description": "The README of the brand's repository."
           }
         }
       }
@@ -330,22 +330,22 @@
   },
   "info": {
     "version": "v1",
-    "title": "Github OSS Stat Plugin API",
-    "description": "这是 Github Stat Plugin 的 API 规范。它提供用于检索 GitHub 用户或特定 GitHub 存储库的统计信息和信息的端点。"
+    "title": "Car Gadget Plugin API",
+    "description": "This is the API specification for the Car Brands Gadget Plug-in. It provides endpoints to retrieve statistics and information for a CarMake user or a specific CarMake brand's repository."
   },
   "openapi": "3.0.1",
   "paths": {
     "/api/github/{owner}": {
       "get": {
-        "operationId": "getGithubUser",
-        "summary": "获取 GitHub 用户信息",
-        "description": "检索 GitHub 用户的统计信息和信息。",
+        "operationId": "getCarMake",
+        "summary": "Get CarMake user information",
+        "description": "Retrieve statistics and information for a CarMake user.",
         "parameters": [
           {
             "in": "path",
             "name": "owner",
             "required": true,
-            "description": "GitHub 用户名。",
+            "description": "CarMake username.",
             "schema": {
               "type": "string"
             }
@@ -353,7 +353,7 @@
         ],
         "responses": {
           "200": {
-            "description": "成功检索到用户信息。",
+            "description": "Successfully retrieved CarMake user information.",
             "content": {
               "application/json": {
                 "schema": {
@@ -367,15 +367,15 @@
     },
     "/api/github/{owner}/{repo}": {
       "get": {
-        "operationId": "getGithubRepo",
-        "summary": "获取 GitHub 存储库信息",
-        "description": "检索特定 GitHub 存储库的统计信息、历史记录和信息。",
+        "operationId": "getCarBrand",
+        "summary": "Get CarMake brand's repository information",
+        "description": "Retrieve statistics, history and information for a specific CarMake brand's repository.",
         "parameters": [
           {
             "in": "path",
             "name": "owner",
             "required": true,
-            "description": "GitHub 用户名。",
+            "description": "CarMake username.",
             "schema": {
               "type": "string"
             }
@@ -384,7 +384,7 @@
             "in": "path",
             "name": "repo",
             "required": true,
-            "description": "GitHub 存储库名称。",
+            "description": "CarMake brand's repository name.",
             "schema": {
               "type": "string"
             }
@@ -392,11 +392,11 @@
         ],
         "responses": {
           "200": {
-            "description": "成功检索到存储库信息。",
+            "description": "Successfully retrieved brand's repository information.",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Repo"
+                  "$ref": "#/components/schemas/Brand"
                 }
               }
             }
@@ -407,7 +407,7 @@
   },
   "servers": [
     {
-      "url": "https://chat-plugin-oss-stat-gadget.vercel.app"
+      "url": "https://chat-plugin-car-brands-gadget.vercel.app"
     }
   ]
 }

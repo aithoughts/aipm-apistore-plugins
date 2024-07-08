@@ -58,6 +58,12 @@ const PluginList: PluginItem[] = [
     path: 'aipm_secret_gadget_0',
     tags: ['secret', 'gadgets'],
   },
+  {
+    manifest:
+      'https://www.theforage.cn/aipmhub/chat-plugins/chat-plugin-car-brands-gadget/manifest.json',
+    path: 'car_brands_gadget',
+    tags: ['car', 'gadgets'],
+  },
 ];
 
 export default PluginList;
